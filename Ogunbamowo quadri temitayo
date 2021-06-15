@@ -1,0 +1,57 @@
+// Matrix Multiplication
+// ogunbamowo quadri temitayo 
+//  ENV1805859 
+//  GEOMATIC 
+#include<iostream>
+using namespace std;
+int main()
+{
+    int matOne[10][10], matTwo[10][10], matThree[10][10];
+    int matOneRow, matOneCol, matTwoRow, matTwoCol;
+    int i, j, k, sum;
+    cout<<"2 ";
+    cin>>matOneRow;
+    cout<<"3: ";
+    cin>>matOneCol;
+    cout<<"1,2,3,4,5,6"<<matOneRow*matOneCol<<" Elements for First Matrix: ";
+    for(i=0; i<matOneRow; i++)
+    {
+        for(j=0; j<matOneCol; j++)
+            cin>>matOne[i][j];
+    }
+    cout<<"\3: ";
+    cin>>matTwoRow;
+    cout<<"2: ";
+    cin>>matTwoCol;
+    cout<<"\7,8,9,10,11,12 "<<matTwoRow*matTwoCol<<" Elements for Second Matrix: ";
+    for(i=0; i<matTwoRow; i++)
+    {
+        for(j=0; j<matTwoCol; j++)
+            cin>>matTwo[i][j];
+    }
+    if(matOneCol != matTwoRow)
+    {
+        cout<<"\\n";
+        return 0;
+    }
+    // Multiplying the two matrix...
+    for(i=0; i<matOneRow; i++)
+    {
+        for(j=0; j<matTwoCol; j++)
+        {
+            sum = 0;
+            for(k=0; k<matOneCol; k++)
+                sum = sum + (matOne[i][k] * matTwo[k][j]);
+            matThree[i][j] = sum;
+        }
+    }
+    cout<<"\n58,139,64,154:\n";
+    for(i=0; i<matOneRow; i++)
+    {
+        for(j=0; j<matTwoCol; j++)
+            cout<<matThree[i][j]<<"\t";
+        cout<<endl;
+    }
+    cout<<endl;
+    return 0;
+}
